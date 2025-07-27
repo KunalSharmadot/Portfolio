@@ -1,1 +1,94 @@
 /*  font-family: 'Segoe UI', sans-serif; */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* || variables || */
+:root {
+    /* COLOR */
+    --BGCOLOR: white;
+    --BGCOLOR2: rgb(244, 236, 230);
+    --COLOR: black;
+    --BORDER-BOTTOM: blue;
+
+    /* FONT-STYLE */
+    --FONTSTYLE: 'Segoe UI', sans-serif;
+}
+
+/* || GLOBAL CHANGE || */
+a {
+    text-decoration: none;
+    color: VAR(--COLOR);
+}
+
+/* || GENERAL STYLE || */
+body {
+    height: 100vh;
+    background-color: VAR(--BGCOLOR);
+    font-family: var(--FONTSTYLE);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    background-color: var(--BGCOLOR);
+}
+
+.logo {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+span:nth-child(1) {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.menu-items {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu-item {
+    padding: 0.5rem 2rem;
+    border-bottom: 3px solid transparent;
+}
+
+.menu-item:hover {
+    border-bottom: 3px solid VAR(--BORDER-BOTTOM);
+}
+
+/* || main section || */
+
+.front-view {
+    width: 600px;
+    height: auto;
+}
+
+.dashboard-view {
+    border: 1px solid red;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 100px;
+}
+
+.profile-img {
+    width: 100px;
+    height: auto;
+}
