@@ -87,8 +87,7 @@ span:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -5rem;
-    /* border: 1px solid red; */
+    margin-top: -7rem;
 }
 
 /* || LEFT SECTION || */
@@ -145,7 +144,6 @@ span:nth-child(1) {
 .right-view {
     width: 60%;
     height: 100%;
-    /* border: 1px solid red; */
 }
 
 .right {
@@ -228,8 +226,6 @@ span:nth-child(1) {
 }
 
 .footer-bottom {
-    width: 100%;
-    height: 30px;
     background-color: var(--BGCOLOR2);
     text-align: center;
 }
