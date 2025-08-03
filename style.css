@@ -28,12 +28,14 @@ body {
     height: 100vh;
     background-color: VAR(--BGCOLOR);
     font-family: var(--FONTSTYLE);
+    scroll-behavior: smooth;
 }
 
 .header {
     position: sticky;
     top: 0;
     box-shadow: 0px 0px 6px var(--COLOR);
+    z-index: 1;
 }
 
 .navbar {
@@ -60,7 +62,7 @@ span:nth-child(1) {
     list-style-type: none;
 }
 
-.home-link {
+.link {
     margin: 0rem 2rem;
     font-weight: normal;
 }
@@ -70,80 +72,91 @@ span:nth-child(1) {
     color: var(--BUTTON-COLOR);
 }
 
-/* || main section || */
+/* Dashboard */
 
-.front-view {
-    width: 100VW;
-    height: 110vh;
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    box-shadow: inset 30rem 0 rgb(153, 212, 146);
+}
+
+.profile-dashboard {
+    width: 55%;
+    height: 80%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 47%;
+    left: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 40rem 0em rgb(230, 218, 206);
+    padding: 2px 0 10px 10px;
 }
 
-.dashboard-view {
-    width: 50rem;
-    height: 33rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -7rem;
-}
-
-/* || LEFT SECTION || */
-
-.left-view {
-    width: 50%;
-    height: auto;
-    place-items: center;
-    background-color: var(--BGCOLOR2);
-    box-shadow: -1px 1px 5px var(--COLOR);
-    margin: 10px;
-}
-
+/* Left Section */
 .profile {
-    margin: 20px 0 -10px 0;
-    padding: 15px 30px;
+    height: 100%;
+    width: 50%;
+    background-color: rgb(211, 248, 201);
+    /* border: 1px solid red; */
+    text-align: center;
+    /* margin: 0px 0px 100px 100px; */
+    box-shadow: -2px 3px 5px black;
+    transition: all 0.5s ease;
 }
 
-.profile-img {
-    width: 12rem;
-    height: auto;
+.profile:hover {
+    transform: scale(101%);
+}
+
+.img {
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.img>img {
+    width: 13rem;
     border-radius: 50%;
 }
 
 .name {
-    font-weight: 500;
-    text-align: center;
     font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0 2rem 0;
 }
 
-.role {
-    margin-top: 10%;
-    /* text-transform: uppercase; */
+hr {
+    width: 10%;
+    margin: 0 auto;
+    border: 1px solid blue;
+}
+
+.work {
+    margin: 2rem 0 3.8rem 0;
     font-variant: small-caps;
+    font-size: 1.2rem;
 }
 
 .social-icon {
-    margin: 20% 0px 0px 0px;
-    height: auto;
+    margin: 0 auto;
     width: 100%;
-    background-color: var(--BGCOLOR);
+    height: 41px;
+    /* border: 1px solid red; */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    background-color: white;
+
+    .icon {
+        width: 20px;
+    }
 }
 
-.icon {
-    margin: 10px 15px;
-    width: 20px;
-}
+/* Right Section */
 
-/* || RIGHT SECTION || */
-
-.right-view {
+.detail {
     width: 60%;
-    height: 100%;
 }
 
 .right {
@@ -158,49 +171,95 @@ span:nth-child(1) {
 /* || Button Section || */
 
 .hire-button,
-.talk-button {
-    margin: 8% 0px;
+.download-button {
+    margin: 8% 10px 8% 0;
     padding: 10px 50px;
     border-radius: 20px;
     border: 2px solid transparent;
     font-weight: bolder;
     background-color: var(--BGCOLOR);
+    border: 1px solid black;
+    transition: all 0.3s ease;
     cursor: pointer;
+    font-size: 1rem;
 }
 
-.hire-button {
-    background-color: var(--BUTTON-COLOR);
-    color: var(--BGCOLOR);
-}
-
-.talk-button {
-    border: 2px solid var(--COLOR);
-    background-color: var(--BGCOLOR);
-    color: var(--COLOR);
-}
-
-.hire-button:hover {
-    border: 2px solid var(--BUTTON-COLOR);
-    background-color: var(--BGCOLOR);
-    color: var(--BUTTON-COLOR);
-}
-
-.talk-button:hover {
-    background-color: var(--BUTTON-COLOR);
-    color: var(--BGCOLOR);
-    border: 2px solid transparent;
+.hire-button:hover,
+.download-button:hover {
+    background-color: rgb(34, 104, 86);
+    color: rgb(255, 255, 255);
+    border: 1px solid transparent;
 }
 
 /* || End Button Section || */
-
 .little-about-me {
     margin-right: 10%;
     word-spacing: 5px;
 }
 
+/* || End Dashboard Section || */
+
+/* || Start Skills Section || */
+
+.skills {
+    margin: 40px 0 20px 0;
+
+    width: 100%;
+    text-align: center;
+    h1{
+        font-size: 4rem;
+        font-variant: small-caps;
+    }
+}
+.skill-set {
+    transform: scale(90%);
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center;
+    gap: 2rem;
+    padding: 40px 0 20px;
+}
+
+.skill {
+    background-color: rgb(252, 251, 182);
+    width: 14%;
+    height: 14rem;
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    font-size: 2rem;
+    box-shadow: 0px 0px 7px black;
+    transition: all 0.3s ease;
+}
+.skill:nth-child(4){
+    .skill-img{
+        width: 40%;
+        margin: 0px 150px -20px 80px;
+    }
+}
+.skill:hover{
+    transform: scale(105%);
+}
+.skill-img{
+    margin: 0 auto;
+    width: 30%;
+}
+
+/* || End Skills Section || */
+
+
+
+
+
+
+
+
+
+
 /* || Footer Section */
 
 .footer {
+    border: 1px solid red;
     width: 100%;
     margin-top: 5rem;
     background-color: var(--BGCOLOR)
@@ -211,7 +270,8 @@ span:nth-child(1) {
     justify-content: space-between;
 }
 
-.footer-right, .footer-left {
+.footer-right,
+.footer-left {
     margin: 0% 5%;
 }
 
@@ -220,6 +280,7 @@ span:nth-child(1) {
     font-weight: 500;
     font-size: 1.2rem;
 }
+
 .follow-icon {
     margin: 10px 15px;
     width: 20px;
@@ -229,4 +290,3 @@ span:nth-child(1) {
     background-color: var(--BGCOLOR2);
     text-align: center;
 }
-
